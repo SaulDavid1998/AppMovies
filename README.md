@@ -1,1 +1,2 @@
 Este proyecto ASP NET fue creado con EF Core usando Code First y localdb para la vinculacion y el manejo de la base de datos.
+Para que la aplicacion se ejecute correctamente, lo unico que hay que hacer es, en Visual Stuio, ir a la opcion Herramientas > Administrador de paquetes Nuget > Consola del Administrador y en la consola escribir el comando Update-Database. Esto creara la base de de datos en el localdb en base al codigo que se encuentra en la carpeta Migrations.
