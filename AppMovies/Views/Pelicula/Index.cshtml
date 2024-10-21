@@ -1,0 +1,37 @@
+﻿@model List<Pelicula>
+@{
+    ViewBag.Title = "Lista";
+    ViewBag.H1 = "Lista de peliculas";
+}
+
+
+<a asp-controller="Pelicula" asp-action="Agregar">Agregar Pelicula</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Titulo</th>
+            <th>Descripcion</th>
+            <th>Director</th>
+            <th>Estudio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Titulo</td>
+                <td>@item.Descripcion</td>
+                <td>@item.Director.Nombre</td>
+                <td>@item.Estudio.Nombre</td>
+                <td>
+                    <a asp-controller="Pelicula" asp-action="Editar" asp-route-id="@item.PeliculaId">Modificar</a>
+                    <a asp-controller="Pelicula" asp-action="Eliminar" asp-route-id="@item.PeliculaId">Eliminar</a>
+                   
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

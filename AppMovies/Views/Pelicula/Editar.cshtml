@@ -1,0 +1,60 @@
+﻿@model Pelicula
+
+@{
+    ViewBag.Title = "Editar";
+    ViewBag.H1 = "Editar pelicula";
+}
+
+
+<form asp-controller="Pelicula" asp-action="Editar" as method="post">
+
+    <div asp-validation-summary="All" class="text-warning"></div>
+
+    <div class="mb-3">
+        <label asp-for="PeliculaId" class="form-label">Id</label>
+        <input asp-for="PeliculaId" class="form-control" readonly />
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="Titulo" class="form-label">Titulo</label>
+        <input asp-for="Titulo" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Año">Año estreno</label>
+        <input asp-for="Año" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Descripcion">Descripcion</label>
+        <input asp-for="Descripcion" class="form-control" />
+    </div>
+
+
+    <div class=" mb-3">
+        <label asp-for="IdDirector" class="form-label">Director</label>
+        <select asp-for="IdDirector" class="form-select">
+            @foreach (var item in ViewBag.Directores)
+            {
+                <option value="@item.DirectorId">@item.Nombre</option>
+            }
+        </select>
+
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="IdEstudio" class="form-label">Director</label>
+        <select asp-for="IdEstudio" class="form-select">
+            @foreach (var item in ViewBag.Estudios)
+            {
+                <option value="@item.EstudioID">@item.Nombre</option>
+            }
+        </select>
+    </div>
+
+
+    <button type="submit" class="btn-primary"> Aceptar Cambios</button>
+
+    <a asp-controller="Pelicula" asp-action="Index">Cancelar</a>
+</form>

@@ -1,0 +1,40 @@
+﻿@model Pelicula
+
+@{
+    ViewBag.Title = "Eliminar";
+
+    ViewBag.H1 = "Eliminar Pelicula";
+}
+
+
+<form asp-controller="Pelicula" asp-action="Eliminar">
+
+    <div class="row mb-3">
+        <div class="col-md-2">
+            <label asp-for="PeliculaId" class="col-form-label">Id</label>
+        </div>
+        <div class="col-md-3">
+            <input asp-for="PeliculaId" readonly />
+        </div>
+
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-2">
+            <label asp-for="Titulo" class="col-form-label">Titulo</label>
+        </div>
+        <div class="col-md-3">
+                <input asp-for="Titulo" readonly />
+        </div>
+            
+    </div>
+
+       <p>¿Esta seguro que desea eliminar esta pelicula</p>
+
+       <button type="submit" class="btn btn-primary">Eliminar</button>
+       <a asp-controller="Pelicula" asp-action="Index" class="btn btn-secondary">Cancelar</a>
+
+
+    </div>
+
+</form>
